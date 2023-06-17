@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="blob.js"></script>
+    <script src="canvas.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+
+</head>
+
+<body class="random-color">
+    <img src="./cybtekk_dark_background.svg" alt="" width="250px" height="88px">
+
+
+
+    <div id="result" class="codess"> Accessibility Color Contrast Checker </div>
+
+
+
+    <input type="color" id="color-1" class="color1" name="color1" value="#FFAAAA">
+    <input type="color" id="color-2" class="color2" name="color2" value="#734C8F">
+
+
+    <br>
+    <button>Check A11y</button> &nbsp;&nbsp;&nbsp;&nbsp;
+
+    <input type="file" id="filetag">
+    <div id="move">
+        <img src="cancel.png" alt="" width="50px" class="cancel" onclick="hidestuff();">
+        <img src="" id="preview">
+
+    </div>
+    <h1 style="padding-bottom: 50px;
+        margin-bottom: 50px;"> &nbsp;</h1>
+    <div><img src="" id="screenshot"></div>
+
+    <script src="main.js"></script>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
