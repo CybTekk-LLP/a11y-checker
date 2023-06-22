@@ -168,13 +168,11 @@ body {
 .color2 {
   width: 70px;
   height: 40px;
-  float: left;
   margin: 10px;
   margin-top: 20px;
 }
 
 select {
-  float: right;
   margin-top: 25px;
   background: radial-gradient(circle, rgba(247, 150, 192, 1) 0%, rgba(118, 174, 241, 1) 100%);
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
@@ -208,3 +206,13 @@ div#move {
   cursor: pointer;
   transform: translate(-33px, 25px);
 }
+
+#grid {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
+
+#label-1,
+#label-2 {}

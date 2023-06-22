@@ -1,6 +1,8 @@
 //Some classes and html functions need to determine a constant
 var color1 = document.querySelector(".color1"); // 1st color
 var color2 = document.querySelector(".color2"); // 2nd color
+var label1 = document.querySelector("#label-1[contenteditable]");
+var label2 = document.querySelector("#label-2[contenteditable]");
 var bodys = document.getElementById("gradient"); // color display
 var linearDirection = document.getElementsByName("toDirection")[0]; //Select box
 var cancel = document.querySelector(".cancel");
@@ -15,6 +17,34 @@ var fileTag = document.getElementById("filetag"),
 fileTag.addEventListener("change", function () {
   changeImage(this);
 });
+
+label1.addEventListener("input", function () {
+  changeColor1("#" + label1.textContent);
+});
+label2.addEventListener("input", function () {
+  changeColor2("#" + label2.textContent);
+});
+
+function changeColor1(input) {
+  color1.value = input;
+}
+function changeColor2(input) {
+  color2.value = input;
+}
+
+color1.addEventListener("input", function () {
+  changeText1(color1.value);
+});
+color2.addEventListener("input", function () {
+  changeText2(color2.value);
+});
+
+function changeText1(input) {
+  label1.textContent = input.substring(1);
+}
+function changeText2(input) {
+  label2.textContent = input.substring(1);
+}
 
 function changeImage(input) {
   var reader;
