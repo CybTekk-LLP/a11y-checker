@@ -40,6 +40,9 @@ var up = false,
   right = false,
   down = false,
   left = false,
+  zoomIn = false,
+  zoomOut = false,
+  i = 1,
   x = window.innerWidth / 2 - 130 / 2,
   y = window.innerHeight / 2 - 130 / 2;
 document.addEventListener("keydown", press);
@@ -56,6 +59,12 @@ function press(e) {
   if (e.keyCode === 65 /* a */) {
     left = true;
   }
+  if (e.keyCode === 90 /* z */) {
+    zoomIn = true;
+  }
+  if (e.keyCode === 88 /* x */) {
+    zoomOut = true;
+  }
 }
 document.addEventListener("keyup", release);
 function release(e) {
@@ -70,6 +79,12 @@ function release(e) {
   }
   if (e.keyCode === 65 /* a */) {
     left = false;
+  }
+  if (e.keyCode === 90 /* z */) {
+    zoomIn = false;
+  }
+  if (e.keyCode === 88 /* x */) {
+    zoomOut = false;
   }
 }
 function gameLoop() {
@@ -86,8 +101,15 @@ function gameLoop() {
   if (left) {
     x = x - 20;
   }
+  if (zoomIn) {
+    i = i + 0.1;
+  }
+  if (zoomOut) {
+    i = i - 0.1;
+  }
   div.style.left = x + "px";
   div.style.top = y + "px";
+  div.style.transform = `scale(${i})`;
   window.requestAnimationFrame(gameLoop);
 }
 window.requestAnimationFrame(gameLoop);
